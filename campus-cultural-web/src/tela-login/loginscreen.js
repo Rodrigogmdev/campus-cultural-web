@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import LoginForm from './loginform';
 import RegisterForm from './registerform';
 import logo from '../assets/logo.png';
+import './loginscreen.css'; 
+
 function Loginscreen() {
   const [isLogin, setIsLogin] = useState(true);
 
@@ -11,7 +13,14 @@ function Loginscreen() {
 
   return (
     <div className="loginscreen">
-      <img src={logo} alt="Campos Cultural" />
+      <header>
+        <div className="vertical-text">
+          Campus
+          <br />
+          Cultural
+        </div>
+      </header>
+      <img src={logo} alt="Campus Cultural" className="logo" />
       {isLogin ? (
         <>
           <LoginForm />
@@ -27,4 +36,4 @@ function Loginscreen() {
   );
 }
 
-export default Loginscreen;
+export default Loginscreen; 
