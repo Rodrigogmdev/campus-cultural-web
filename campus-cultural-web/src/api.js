@@ -35,4 +35,13 @@ export const createEvent = async (eventData) => {
   }
 };
 
+export const getEvents = async () => {
+  try {
+    const response = await api.get('/evento'); // Endpoint para obter eventos
+    return response.data;
+  } catch (error) {
+    throw error.response?.data?.message || 'Erro ao buscar eventos';
+  }
+};
+
 export default api;
